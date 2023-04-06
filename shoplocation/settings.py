@@ -17,7 +17,7 @@ SECRET_KEY = 'django-insecure-kwc_$r*j@z&u(c_zx-8a4&$4vb!l*(_2ibj4^ja5*j_!)$000o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['34.100.184.67', 'smallidea.co', 'localhost']
 
 
 # Application definition

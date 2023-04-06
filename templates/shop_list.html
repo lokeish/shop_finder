@@ -8,7 +8,7 @@
     {% for shop in shops %}
       <li class="shop-item">
         <a href="{% url 'shop_detail' shop.pk %}" class="shop-name">{{ shop.name }}</a>
-        <span class="shop-address">{{ shop.address }}</span>
+        <!-- <span class="shop-address">{{ shop.address }}</span> -->
       </li>
     {% endfor %}
     </ul>
