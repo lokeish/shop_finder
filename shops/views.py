@@ -9,7 +9,6 @@ from .forms import ShopForm, UpdateShopForm
 from shops.util import helper
 
 def create_shop(request):
-    print("create shop starting -->", request.method)
     if request.method == 'POST':
         shop_name = request.POST.get('name')
         latitude = request.POST.get('latitude')
@@ -74,7 +73,7 @@ def shop_detail(request, pk):
         shop = get_object_or_404(Shop, pk=pk)
         return render(request, 'shop_detail.html', {'shop': shop})
     except Exception as ex:
-        return HttpResponse("This shop id does not exis :(")
+        return HttpResponse("This shop id does not exis :(", status=404)
 
 
 def check_website(request):
