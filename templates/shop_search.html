@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <h2>Find Shops Near You</h2>
+    <form method="post" class="search-form">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="latitude">Latitude:</label>
+        <input type="text" name="latitude" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="longitude">Longitude:</label>
+        <input type="text" name="longitude" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="distance">Distance (km):</label>
+        <input type="text" name="distance" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+  </div>
+  
+  <style>
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .search-form {
+      margin-top: 40px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input[type="text"] {
+      width: 90%;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #007bff;
+    }
+    button:hover {
+      background-color: #0069d9;
+      cursor: pointer;
+    }
+  </style>
+{% endblock %}

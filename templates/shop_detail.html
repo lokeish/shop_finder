@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<center style="text-align: center;">
+  <h3>Shop Name is {{ shop.name }}</h3>
+  <form method="get" action="{% url 'update_shop' shop.pk %}" style="text-align:center;">
+    {% csrf_token %}
+  <table style="border-collapse: collapse; border: 1px solid black; margin: auto; padding: 50px 1000px 1000px 100px;">
+    <tr>
+      <td style="border: 1px solid black; padding: 5px;">Latitude:</td>
+      <td style="border: 1px solid black; padding: 5px;">{{ shop.location.x }}</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid black; padding: 5px;">Longitude:</td>
+      <td style="border: 1px solid black; padding: 5px;">{{ shop.location.y }}</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid black; padding: 5px;">Created:</td>
+      <td style="border: 1px solid black; padding: 5px;">{{ shop.created_at }}</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid black; padding: 5px;">Last updated:</td>
+      <td style="border: 1px solid black; padding: 5px;">{{ shop.updated_at }}</td>
+    </tr>
+  </table>
+
+  <button style="background-color: lightgreen; border: none; color: white; padding: 15px 32px; text-align: center; display: inline-block; font-size: 10px; margin-top: 15px;">EDIT</button>
+</center>
+</form>
+{% endblock %}

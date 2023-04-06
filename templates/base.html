@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Shop Locations Finder{% endblock %}</title>
+  <style>
+    /* global styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+    header {
+      background-color: #222;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      position: relative;
+    }
+    .search-shop-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .home-btn {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: #f4f4f4;
+      color: #333;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    main {
+      margin: 20px;
+    }
+    h1 {
+      margin: 0;
+    }
+    /* page-specific styles */
+    .shop-list {
+      list-style: none;
+      padding: 0;
+    }
+    .shop-list li {
+      margin-bottom: 10px;
+      padding: 5px;
+      background-color: #f4f4f4;
+      border-radius: 5px;
+    }
+    .shop-list li a {
+      color: #333;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Shop Location Finder</h1>
+    <button class="home-btn" type="submit" onclick="window.location.href='/'">Home</button>
+    <button class="search-shop-btn" type="submit" onclick="window.location.href='/shop_search'">Search Shop</button>
+  </header>
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+</body>
+</html>

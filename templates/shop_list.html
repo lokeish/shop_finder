@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+<center>
+  <h1 class="page-title">Shops</h1>
+  {% if shops %}
+    <ul class="shop-list">
+    {% for shop in shops %}
+      <li class="shop-item">
+        <a href="{% url 'shop_detail' shop.pk %}" class="shop-name">{{ shop.name }}</a>
+        <span class="shop-address">{{ shop.address }}</span>
+      </li>
+    {% endfor %}
+    </ul>
+  {% else %}
+    <p>No shops found.</p>
+  {% endif %}
+{% endblock %}
+</center>
+
+{% block styles %}
+<style>
+  .page-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .shop-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .shop-item {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }
+
+  .shop-name {
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .shop-address {
+    color: #666;
+    display: block;
+    font-size: 16px;
+    margin-top: 5px;
+  }
+</style>
+{% endblock %}
